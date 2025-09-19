@@ -1,5 +1,5 @@
-import Header from "@/Layouts/Client/Header.jsx";
-import Footer from "@/Layouts/Client/Footer.jsx";
+import Header from "@/Layouts/Frontend/Header.jsx";
+import Footer from "@/Layouts/Frontend/Footer.jsx";
 import '@/../css/client.css';
 
 const Main = ({children}) => {
