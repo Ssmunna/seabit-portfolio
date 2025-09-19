@@ -40,7 +40,7 @@ export default function Alert({alertData}){
             <div
                 className="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-sm sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
                 <div
-                    className="w-full flex flex-col bg-white border shadow-sm rounded-sm pointer-events-auto dark:bg-neutral-800 dark:border-neutral-600 dark:shadow-neutral-700/70">
+                    className="w-full flex flex-col bg-white shadow-sm rounded-sm pointer-events-auto dark:bg-neutral-800 dark:border-neutral-600 dark:shadow-neutral-700/70">
                     <div className="p-4 overflow-y-auto text-center">
                         <form onSubmit={submit}>
                             <div className="w-full p-5 flex items-center justify-center">

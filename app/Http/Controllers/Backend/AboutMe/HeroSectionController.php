@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\AboutMe;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\HeroSection\HeroSectionUpdateRequest;
+use App\Http\Requests\Backend\AboutCompany\HeroSection\HeroSectionUpdateRequest;
 use App\Http\Services\Backend\HeroSectionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;

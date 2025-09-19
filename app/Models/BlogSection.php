@@ -14,6 +14,6 @@ class BlogSection extends Model
         'description',
         'image',
         'status',
-        'page'
+        'page_name'
     ];
 }

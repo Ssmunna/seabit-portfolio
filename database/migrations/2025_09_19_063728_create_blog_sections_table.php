@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('image');
             $table->string('status', 20)->default(STATUS_ACTIVE);
-            $table->string('page', 50)->unique();
+            $table->string('page_name', 50);
             $table->timestamps();
         });
     }

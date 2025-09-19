@@ -15,9 +15,10 @@ class BlogSectionService
 
     /**
      * @param array $query
+     * @param string $pageName
      * @return array
      */
-    public function getListData (array $query): array
+    public function getListData (array $query, string $pageName): array
     {
         try {
             $validationErrorMsg = $this->queryParams($query)->required([]);
@@ -29,9 +30,13 @@ class BlogSectionService
                 $query['graph'] = '{*}';
             }
 
+            if(!array_key_exists('page_name', $query)) {
+                $query['page_name'] = $pageName;
+            }
+
             $dbQuery = BlogSection::query();
             $dbQuery = QueryAssist::queryOrderBy($dbQuery, $query);
-            $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['status', 'page']);
+            $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['status','page_name']);
             $dbQuery = QueryAssist::queryGraphSQL($dbQuery, $query, new BlogSection);
 
             if (array_key_exists('search', $query)) {
@@ -56,12 +61,17 @@ class BlogSectionService
 
     /**
      * @param array $payload
+     * @param string $pageName
      * @return array
      */
-    public function storeData (array $payload): array
+    public function storeData (array $payload, string $pageName): array
     {
         try {
-            $imageName = $this->upload_file( $payload['image'], $payload['page'],'blog');
+            $imageName = $this->upload_file( $payload['image'], $pageName,'blog');
+
+            if(!array_key_exists('page_name', $payload)) {
+                $payload['page_name'] = $pageName;
+            }
 
             BlogSection::create( $this->_formatedBlogCreatedData( $payload, $imageName));
 
@@ -75,12 +85,13 @@ class BlogSectionService
 
     /**
      * @param array $payload
+     * @param string $pageName
      * @return array
      */
-    public function updateData (array $payload): array
+    public function updateData (array $payload, string $pageName): array
     {
         try {
-            $blog = BlogSection::where('id', $payload['id'])->first();
+            $blog = BlogSection::where('id', $payload['id'])->where('page_name', $pageName)->first();
             if(!$blog) {
                 return $this->response()->error('Blog not found');
             }
@@ -88,6 +99,10 @@ class BlogSectionService
             $imageName = null;
             if($payload['image']){
                 $imageName = $this->upload_file( $payload['image'], 'tour', 'blog', $blog->image);
+            }
+
+            if(!array_key_exists('page_name', $payload)) {
+                $payload['page_name'] = $pageName;
             }
 
             $blog->update( $this->_formatedBlogUpdatedData( $payload, $imageName));
@@ -102,12 +117,13 @@ class BlogSectionService
 
     /**
      * @param array $payload
+     * @param string $pageName
      * @return array
      */
-    public function changeBlogStatus (array $payload): array
+    public function changeBlogStatus (array $payload, string $pageName): array
     {
         try {
-            $blog = BlogSection::where('id', $payload['id'])->first();
+            $blog = BlogSection::where('id', $payload['id'])->where('page_name', $pageName)->first();
             if (!$blog) {
                 return $this->response()->error("Blog not found");
             }
@@ -123,12 +139,13 @@ class BlogSectionService
 
     /**
      * @param string $id
+     * @param string $pageName
      * @return array
      */
-    public function deleteBlog (string $id): array
+    public function deleteBlog (string $id, string $pageName): array
     {
         try {
-            $blog = BlogSection::where('id', $id)->first();
+            $blog = BlogSection::where('id', $id)->where('page_name', $pageName)->first();
             if (!$blog) {
                 return $this->response()->error("Blog not found");
             }
@@ -156,7 +173,7 @@ class BlogSectionService
         $data = [
             'description' => $payload['description'],
             'image' => $imageName,
-            'page' => $payload['page'],
+            'page_name' => $payload['page_name'],
         ];
 
         if(!empty($payload['title'])) $data['title'] = $payload['title'];

@@ -39,7 +39,7 @@ function SearchBox(props) {
                     aria-label="Search"
                     type="button"
                 >
-                    <FaSearch className={`size-4`} />
+                    <FaSearch className={`size-3`} />
                 </button>
             ) : (
                 <button

@@ -53,12 +53,12 @@ const menuItems = [
 export default function Sidebar() {
     const { url: currentUrl } = usePage()
     return (
-        <div id="hs-pro-sidebar" className="hs-overlay [--body-scroll:true] lg:[--overlay-backdrop:false] [--is-layout-affect:true] [--opened:lg] [--auto-close:lg]
+        <div id="hs-pro-sidebar" className="hs-overlay [--body-scroll:true] [--overlay-backdrop:false] [--is-layout-affect:true] [--opened:lg] [--auto-close:lg]
     hs-overlay-open:translate-x-0 lg:hs-overlay-layout-open:translate-x-0
     -translate-x-full transition-all duration-300 transform
     w-60
     hidden
-    fixed inset-y-0 z-60 start-0
+    fixed inset-y-0 z-5 start-0
     bg-zinc-100
     lg:block lg:-translate-x-full lg:end-auto lg:bottom-0
     dark:bg-neutral-900" role="dialog" tabIndex="-1" aria-label="Sidebar">
@@ -112,6 +112,12 @@ export default function Sidebar() {
                                             Hero Section
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link href={route('admin.about-company.blog.list')} className={`flex items-center gap-x-2.5 pr-2.5 py-1 text-[15px] text-gray-800 rounded-lg ${route().current('admin.about-company.blog.list') ? 'bg-gray-50' : ''} hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-neutral-200`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"/></svg>
+                                            Blog Section
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -134,6 +140,12 @@ export default function Sidebar() {
                                             Hero Section
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link href={route('admin.about-me.blog.list')} className={`flex items-center gap-x-2.5 pr-2.5 py-1 text-[15px] text-gray-800 rounded-lg ${route().current('admin.about-me.blog.list') ? 'bg-gray-50' : ''} hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-neutral-200`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"/></svg>
+                                            Blog Section
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -154,6 +166,12 @@ export default function Sidebar() {
                                         <Link href={route('admin.sample-script.hero.page')} className={`flex items-center gap-x-2.5 pr-2.5 py-1 text-[15px] text-gray-800 rounded-lg ${route().current('admin.sample-script.hero.page') ? 'bg-gray-50' : ''} hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-neutral-200`}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"/></svg>
                                             Hero Section
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href={route('admin.sample-script.blog.list')} className={`flex items-center gap-x-2.5 pr-2.5 py-1 text-[15px] text-gray-800 rounded-lg ${route().current('admin.sample-script.blog.list') ? 'bg-gray-50' : ''} hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-neutral-200`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"/></svg>
+                                            Blog Section
                                         </Link>
                                     </li>
                                 </ul>
