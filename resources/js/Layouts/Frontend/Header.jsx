@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "@inertiajs/react";
-import LargeScreenNav from "@/Components/Client/Home/HeaderSection/LargeScreenNav.jsx";
-import MobileScreenNav from "@/Components/Client/Home/HeaderSection/MobileScreenNav.jsx";
+import LargeScreenNav from "@/Components/Frontend/Home/HeaderSection/LargeScreenNav.jsx";
+import MobileScreenNav from "@/Components/Frontend/Home/HeaderSection/MobileScreenNav.jsx";
 
 const Header = () => {
     return (

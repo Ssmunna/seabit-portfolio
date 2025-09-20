@@ -1,4 +1,4 @@
-import UserDropdown from "@/Components/Dashboard/Header/UserDropdown.jsx";
+import UserDropdown from "@/Components/Backend/Header/UserDropdown.jsx";
 import {Link} from "@inertiajs/react";
 
 export default function Header(){
