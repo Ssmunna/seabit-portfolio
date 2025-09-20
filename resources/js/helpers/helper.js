@@ -27,8 +27,36 @@ export const setPaginationFromSessionStorage = (setPagination, sessionKey, ref) 
     setPagination({...ref})
 }
 
+export const deepUpdate = (target, source) => {
+    if (target === null) return source
 
-export const convertToLocalDateTime = input => {
+    // if type
+    if (typeof target !== typeof source) {
+
+        if (!(
+            ['number','string'].includes(typeof target)
+            && ['number','string'].includes(typeof target)
+        )) return target
+
+    }
+
+    // if type same
+    if (target instanceof Array && source instanceof Array) return source;
+    // if type not array
+    if (typeof target !== 'object') return source;
+    // if type object
+
+    const output = {...target};
+    for (const key of Object.keys(target)) {
+        output[key] = deepUpdate(target[key], source[key]);
+    }
+
+    return output;
+};
+
+
+
+        export const convertToLocalDateTime = input => {
     const date = new Date(input);
     const options = {
         year: 'numeric',

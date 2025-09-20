@@ -60,67 +60,6 @@ export default function Header(){
                                             <p className="text-sm text-gray-500 dark:text-neutral-500">
                                                 jamescollison@site.com
                                             </p>
-                                            <div className="mt-1.5">
-                                                <a className="flex justify-center items-center gap-x-1.5 py-2 px-2.5 font-medium text-[13px] bg-black text-white rounded-lg focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-black"
-                                                   href="#">
-                                                    Upgrade to Pro
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div className="px-4 py-2 border-t border-gray-200 dark:border-neutral-800">
-                                            <div className="flex flex-wrap justify-between items-center gap-2">
-                                                <span
-                                                    className="flex-1 cursor-pointer text-sm text-gray-600 dark:text-neutral-400">Theme</span>
-                                                <div
-                                                    className="p-0.5 inline-flex cursor-pointer bg-gray-100 rounded-full dark:bg-neutral-800">
-                                                    <button type="button"
-                                                            className="size-7 flex justify-center items-center bg-white shadow-sm text-gray-800 rounded-full dark:text-neutral-200 hs-auto-mode-active:bg-transparent hs-auto-mode-active:shadow-none hs-dark-mode-active:bg-transparent hs-dark-mode-active:shadow-none"
-                                                            data-hs-theme-click-value="default">
-                                                        <svg className="shrink-0 size-4"
-                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                             strokeWidth="2" strokeLinecap="round"
-                                                             strokeLinejoin="round">
-                                                            <circle cx="12" cy="12" r="4"/>
-                                                            <path d="M12 3v1"/>
-                                                            <path d="M12 20v1"/>
-                                                            <path d="M3 12h1"/>
-                                                            <path d="M20 12h1"/>
-                                                            <path d="m18.364 5.636-.707.707"/>
-                                                            <path d="m6.343 17.657-.707.707"/>
-                                                            <path d="m5.636 5.636.707.707"/>
-                                                            <path d="m17.657 17.657.707.707"/>
-                                                        </svg>
-                                                        <span className="sr-only">Default (Light)</span>
-                                                    </button>
-                                                    <button type="button"
-                                                            className="size-7 flex justify-center items-center text-gray-800 rounded-full dark:text-neutral-200 hs-dark-mode-active:bg-white hs-dark-mode-active:shadow-sm hs-dark-mode-active:text-neutral-800"
-                                                            data-hs-theme-click-value="dark">
-                                                        <svg className="shrink-0 size-4"
-                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                             strokeWidth="2" strokeLinecap="round"
-                                                             strokeLinejoin="round">
-                                                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-                                                        </svg>
-                                                        <span className="sr-only">Dark</span>
-                                                    </button>
-                                                    <button type="button"
-                                                            className="size-7 flex justify-center items-center text-gray-800 rounded-full dark:text-neutral-200 hs-auto-light-mode-active:bg-white hs-auto-dark-mode-active:bg-red-800 hs-auto-mode-active:shadow-sm"
-                                                            data-hs-theme-click-value="auto">
-                                                        <svg className="shrink-0 size-4"
-                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                             strokeWidth="2" strokeLinecap="round"
-                                                             strokeLinejoin="round">
-                                                            <rect width="20" height="14" x="2" y="3" rx="2"/>
-                                                            <line x1="8" x2="16" y1="21" y2="21"/>
-                                                            <line x1="12" x2="12" y1="17" y2="21"/>
-                                                        </svg>
-                                                        <span className="sr-only">Auto (System)</span>
-                                                    </button>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div className="p-1 border-t border-gray-200 dark:border-neutral-800">
                                             <a className="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
@@ -133,18 +72,6 @@ export default function Header(){
                                                     <circle cx="12" cy="7" r="4"/>
                                                 </svg>
                                                 Profile
-                                            </a>
-                                            <a className="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                                               href="#">
-                                                <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                                                     width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                                                     strokeLinejoin="round">
-                                                    <path
-                                                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-                                                    <circle cx="12" cy="12" r="3"/>
-                                                </svg>
-                                                Settings
                                             </a>
                                             <Link href={route('logout')} as={`button`} method={`post`} className="w-full flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
                                                 <svg className="shrink-0 mt-0.5 size-4"
