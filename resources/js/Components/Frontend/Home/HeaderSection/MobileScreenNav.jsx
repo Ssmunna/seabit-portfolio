@@ -10,10 +10,10 @@ export default function MobileScreenNav() {
     }
 
     return (
-        <div className={`w-full border-b border-gray-200 fixed left-0 right-0 top-0 bg-gray-50 shadow z-999`}>
-            <div className="flex md:hidden items-center justify-between px-3 py-3">
+        <div className={`w-full px-5 border-b border-gray-200 fixed left-0 right-0 top-0 bg-gray-50 shadow z-999`}>
+            <div className="flex lg:hidden items-center justify-between px-3 py-3">
                 <div className={`flex gap-x-10 items-center`}>
-                    <img src="/assets/images/logo2.png" alt="" className="h-13" />
+                    <img src="/assets/images/logo.png" alt="" className="h-13" />
                 </div>
                 <div>
                     <button type="button"
