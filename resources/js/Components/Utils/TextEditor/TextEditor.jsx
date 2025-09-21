@@ -23,7 +23,6 @@ export default function TextEditor({ value, setValue }) {
 
     return (
         <ReactQuill
-            theme="snow"
             value={value}
             onChange={setValue}
             modules={modules}
