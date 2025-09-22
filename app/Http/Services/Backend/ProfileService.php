@@ -1,17 +1,12 @@
 <?php
 namespace App\Http\Services\Backend;
 
-use App\Models\BlogSection;
-use App\Models\HeroSection;
 use App\Traits\FileSaver;
 use App\Traits\Request;
 use App\Traits\Response;
-use Bitsmind\GraphSql\Facades\QueryAssist;
 use Bitsmind\GraphSql\QueryAssist as QueryAssistTrait;
-use http\Client\Curl\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class ProfileService
 {
