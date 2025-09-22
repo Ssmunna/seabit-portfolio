@@ -3,7 +3,7 @@
 use App\Http\Controllers\Backend\SampleScript\BlogSectionController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['as'=> 'admin.sample-script.', 'prefix' => 'sample-script' ,'middleware' => ['auth']], function () {
+Route::group(['as'=> 'admin.sample-script.', 'prefix' => 'admin/sample-script' ,'middleware' => ['auth']], function () {
     Route::group(['as'=> 'blog.', 'prefix' => 'blog' ,'middleware' => ['auth']], function () {
         Route::get('/list', [BlogSectionController::class, 'getList'])->name('list');
         Route::post('/store', [BlogSectionController::class, 'store'])->name('store');

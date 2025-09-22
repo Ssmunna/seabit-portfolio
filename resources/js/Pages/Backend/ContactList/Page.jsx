@@ -56,7 +56,7 @@ export default function Page({data: contactListData}){
     const alert = (id) => {
         setAlertData({
             ...alertData,
-            route : `/contact/delete/${id}`,
+            route : `/admin/contact/delete/${id}`,
             color : 'red',
             method : 'delete',
             text : 'Are you sure you want to delete this ?'

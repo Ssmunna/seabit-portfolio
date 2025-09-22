@@ -3,7 +3,7 @@
 use App\Http\Controllers\Backend\AboutMe\BlogSectionController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['as'=> 'admin.about-me.', 'prefix' => 'about-me' ,'middleware' => ['auth']], function () {
+Route::group(['as'=> 'admin.about-me.', 'prefix' => 'admin/about-me' ,'middleware' => ['auth']], function () {
     Route::group(['as'=> 'blog.', 'prefix' => 'blog' ,'middleware' => ['auth']], function () {
         Route::get('/list', [BlogSectionController::class, 'getList'])->name('list');
         Route::post('/store', [BlogSectionController::class, 'store'])->name('store');

@@ -67,7 +67,7 @@ export default function Page({data: blogListData}){
     const alert = (id) => {
         setAlertData({
             ...alertData,
-            route : `/about-company/blog/delete/${id}`,
+            route : `/admin/about-company/blog/delete/${id}`,
             color : 'red',
             method : 'delete',
             text : 'Are you sure you want to delete this ?'

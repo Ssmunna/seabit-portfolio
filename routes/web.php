@@ -12,6 +12,6 @@ Autoloader::loadFilesRecursivelyInDirs([__DIR__ . '/web/']);
 
 
 
-Route::get('/dashboard', [DashboardController::class, 'Home'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('admin/dashboard', [DashboardController::class, 'Home'])->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
