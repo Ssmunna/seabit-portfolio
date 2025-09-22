@@ -19,7 +19,9 @@ class TrackVisitor
         $ip = $request->ip();
 
         // Store only if new visitor
-        Visitor::firstOrCreate(['ip' => $ip]);
+        if (!$request->is('admin/*')) {
+            Visitor::firstOrCreate(['ip' => $ip]);
+        }
 
         return $next($request);
     }

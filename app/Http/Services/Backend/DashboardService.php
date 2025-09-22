@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Services\Backend;
+use App\Models\Contact;
+use App\Models\Visitor;
 use App\Traits\Response;
 
 class DashboardService
@@ -13,7 +15,13 @@ class DashboardService
     public function Home (array $query): array
     {
         try {
-           return $this->response( )->success('Login Successfully');
+            $uniqueVisitor = Visitor::all()->count();
+            $totalContact  = Contact::all()->count();
+
+           return $this->response([
+               'unique_visitor' => $uniqueVisitor,
+               'total_contact' => $totalContact,
+           ])->success('Login Successfully');
         } catch (\Exception $exception) {
             return $this->response( )->error($exception->getMessage());
         }
