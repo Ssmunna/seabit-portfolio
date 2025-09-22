@@ -20,6 +20,12 @@ Route::get('about-me', function () {
 })->name('home');
 
 
+Route::get('sample-scripts', function () {
+    return Inertia::render('Frontend/SampleScripts/Page');
+});
+
+
+
 Route::get('contact-details', function () {
     return Inertia::render('Frontend/Contact/Page');
 });
