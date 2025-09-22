@@ -6,6 +6,7 @@ import section2 from "../../../../../public/assets/images/aboutMyCompany/section
 import section3 from "../../../../../public/assets/images/aboutMyCompany/section-3.png";
 import section4 from "../../../../../public/assets/images/aboutMyCompany/section-4.png";
 import sectionShape3 from "../../../../../public/assets/images/section/sectionShape3.png";
+import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
 import about from "../../../../../public/assets/images/aboutMe/about.png";
 
 const aboutMyCompany = {
@@ -39,7 +40,9 @@ const Page = ({ data }) => {
 
     return (
         <Main>
-            <div className={`flex items-center text-white h-[300px] md:h-[667px] mb-[50px] bg-[url('/assets/images/aboutMe/bannerHero.png')] w-full bg-cover bg-[position:70%_center]`}>
+            <div
+                className={`flex items-center text-white h-[300px] md:h-[667px] mb-[50px] bg-[url('/assets/images/aboutMe/bannerHero.png')] w-full bg-cover bg-[position:70%_center]`}
+            >
                 <div className="w-full px-5">
                     <div className="max-w-[1250px] m-auto text-[46px]">
                         <h3 className="font-[700]">About Me</h3>
@@ -74,7 +77,9 @@ const Page = ({ data }) => {
                         </div>
                         <div className="p-[50px]">
                             <div className="uppercase text-[32px] font-[700] leading-[30px]">
-                                <h2 className="text-[#111111]">PRODUCER AND Collaborator</h2>
+                                <h2 className="text-[#111111]">
+                                    PRODUCER AND Collaborator
+                                </h2>
                             </div>
                             <p className="leading-[26px] mt-[20px]">
                                 I have had the privilege of collaborating with
@@ -117,13 +122,21 @@ const Page = ({ data }) => {
                             </p>
                         </div>
                         <div className="p-5">
-                            <img src={section2} alt="section-image" className={`w-full h-full object-cover`} />
+                            <img
+                                src={section2}
+                                alt="section-image"
+                                className={`w-full h-full object-cover`}
+                            />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="p-[50px]">
-                            <img src={section3} alt="section-image " className={`w-full h-full object-cover`} />
+                            <img
+                                src={section3}
+                                alt="section-image "
+                                className={`w-full h-full object-cover`}
+                            />
                         </div>
                         <div className="p-[50px]">
                             <div className="uppercase text-[32px] font-[700] leading-[30px]">
@@ -211,6 +224,9 @@ const Page = ({ data }) => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="">
+                <img src={sectionShape4} className="w-full" alt="" />
             </div>
         </Main>
     );
