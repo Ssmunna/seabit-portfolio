@@ -1,7 +1,10 @@
 import UserDropdown from "@/Components/Backend/Header/UserDropdown.jsx";
-import {Link} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
+import {FaRegUserCircle} from "react-icons/fa";
 
 export default function Header(){
+    const {logo, fileBase} = usePage().props
+
     return (
         <header
             className="fixed top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[50] w-full bg-zinc-100 text-sm py-2.5 dark:bg-neutral-900">
@@ -9,10 +12,9 @@ export default function Header(){
                 <div className="w-full flex items-center gap-x-1.5">
                     <ul className="flex lg:justify-between items-center gap-1.5 w-[225px]">
                         <li className="inline-flex items-center relative text-gray-200 pe-1.5  dark:text-neutral-200 dark:after:bg-neutral-700">
-                            <a className="shrink-0 inline-flex justify-center items-center size-8 rounded-md text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80"
-                               aria-label="Preline">
-                                <img src="/assets/images/logo.png" alt=""/>
-                            </a>
+                            <div className="shrink-0 w-24">
+                                <img src={`${fileBase}/${logo.path}`} alt="logo"/>
+                            </div>
 
                             <div className="hidden sm:block ms-1">
 
@@ -45,25 +47,13 @@ export default function Header(){
                                     <button id="hs-dnad" type="button"
                                             className="p-0.5 inline-flex shrink-0 items-center gap-x-3 text-start rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 dark:focus:bg-neutral-800 dark:focus:text-neutral-200 dark:text-neutral-500"
                                             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                                        <img className="shrink-0 size-7 rounded-full"
-                                             src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
-                                             alt="Avatar"/>
+                                        <FaRegUserCircle className={`size-7`} />
                                     </button>
 
-                                    <div
-                                        className="hs-dropdown-menu hs-dropdown-open:opacity-100 w-60 transition-[opacity,margin] duration opacity-0 hidden z-20 bg-white border border-gray-200 rounded-xl shadow-xl dark:bg-neutral-900 dark:border-neutral-700"
+                                    <div className="hs-dropdown-menu hs-dropdown-open:opacity-100 w-60 transition-[opacity,margin] duration opacity-0 hidden z-20 bg-white border border-gray-200 rounded-xl shadow-xl dark:bg-neutral-900 dark:border-neutral-700"
                                         role="menu" aria-orientation="vertical" aria-labelledby="hs-dnad">
-                                        <div className="py-2 px-3.5">
-                                      <span className="font-medium text-gray-800 dark:text-neutral-300">
-                                        James Collison
-                                      </span>
-                                            <p className="text-sm text-gray-500 dark:text-neutral-500">
-                                                jamescollison@site.com
-                                            </p>
-                                        </div>
                                         <div className="p-1 border-t border-gray-200 dark:border-neutral-800">
-                                            <a className="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                                               href="#">
+                                            <Link href={route('admin.profile.page')} className="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
                                                 <svg className="shrink-0 mt-0.5 size-4"
                                                      xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                      viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -72,7 +62,7 @@ export default function Header(){
                                                     <circle cx="12" cy="7" r="4"/>
                                                 </svg>
                                                 Profile
-                                            </a>
+                                            </Link>
                                             <Link href={route('logout')} as={`button`} method={`post`} className="w-full flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
                                                 <svg className="shrink-0 mt-0.5 size-4"
                                                      xmlns="http://www.w3.org/2000/svg" width="24" height="24"
