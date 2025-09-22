@@ -12,7 +12,7 @@ export default function Page({data:content}){
     const {data, setData, post, processing, errors, reset} = useForm({
         title: '',
         image: '',
-        page: 'home'
+        page_name: 'home'
     });
     const uploadFile = useRef(null);
     const [previewImage, setPreviewImage] = useState('');
@@ -29,7 +29,7 @@ export default function Page({data:content}){
             setData({
                 title: '',
                 image: '',
-                page: 'home'
+                page_name: 'home'
             })
             setPreviewImage(null)
         }

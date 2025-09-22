@@ -24,7 +24,7 @@ class HeroSectionController extends Controller
         $response = $this->handleSession( $this->service->getData( ['page_name' => CONTACT_DETAILS_PAGE]));
 
         return $response['success'] ?
-            Inertia::render('Backend/ContactDetails/Page', $response)
+            Inertia::render('Backend/Contact/Page', $response)
             : back()->withErrors($response['message']);
     }
 

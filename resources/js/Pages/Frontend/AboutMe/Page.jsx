@@ -55,7 +55,7 @@ const Page = ({ data }) => {
             <div>
                 <img src={sectionShape3} className="w-full" alt="" />
             </div>
-            <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px]">
+            <div className="max-w-[1250px] m-auto py-[50px] px-[20px] md:px-0 text-[#7A7A7A] text-[16px]">
                 <div className="grid grid-cols-1 md:grid-cols-2 md:p-[50px] md:gap-10">
                     <div>
                         <img
@@ -82,8 +82,7 @@ const Page = ({ data }) => {
                             only thought-provoking but entertaining.
                         </p>
                         <p className="font-[700] mt-[30px]">
-                            IMDB link is:{" "}
-                            <a href="">http://www.imdb.com/name/nm5397763</a>{" "}
+                            IMDB link is: <a className={`text-[#CC3366]`} target="_blank" href="http://www.imdb.com/name/nm5397763">http://www.imdb.com/name/nm5397763</a>
                         </p>
                     </div>
                 </div>

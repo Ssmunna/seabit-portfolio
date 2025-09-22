@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa6'
 import {FiMail, FiPhone} from "react-icons/fi";
 import {FaSkype} from "react-icons/fa";
+import {Link} from "@inertiajs/react";
 
 const Footer = ({contact_info, social_links}) => {
     return (
@@ -20,17 +21,38 @@ const Footer = ({contact_info, social_links}) => {
                         <div>
                             <h3 className="font-semibold mb-4 text-white">Quick Links</h3>
                             <ul className="space-y-2">
-                                {["About My Company", "About Me", "Sample Scripts", "ContactDetails Details"].map((link, idx) => (
-                                    <li key={idx}>
-                                        <a
-                                            href="#"
-                                            className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
-                                        >
-                                            <span className="w-2 h-2 bg-red-600 rounded-full"></span>
-                                            {link}
-                                        </a>
-                                    </li>
-                                ))}
+                                <li>
+                                    <Link href={route('about_company')}
+                                        className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                    >
+                                        <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                                        About My Company
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('about_me')}
+                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                    >
+                                        <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                                        About Me
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('sample-script')}
+                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                    >
+                                        <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                                        Sample Scripts
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('contact_details')}
+                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                    >
+                                        <span className="w-2 h-2 bg-red-600 rounded-full"></span>
+                                        Contact Details
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

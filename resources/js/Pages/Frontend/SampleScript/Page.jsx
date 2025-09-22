@@ -2,7 +2,7 @@ import React from "react";
 import Main from "@/Layouts/Frontend/Main.jsx";
 import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
 
-import {usePage} from "@inertiajs/react";
+import {Link, usePage} from "@inertiajs/react";
 
 
 const Page = ({ data }) => {
@@ -26,9 +26,9 @@ const Page = ({ data }) => {
             </div>
 
             <div className="flex justify-center items-center">
-                <button className="bg-[#E80606] text-white px-[24px] py-[12px] rounded cursor-pointer text-[15px]">
+                <Link href={route('contact_details')} className="bg-[#E80606] text-white px-[24px] py-[12px] rounded cursor-pointer text-[15px]">
                     Please enquire here
-                </button>
+                </Link>
             </div>
 
             <div className="">

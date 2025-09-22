@@ -6,7 +6,7 @@ import {HSOverlay} from "preline";
 export default function MobileScreenNav() {
 
     const handleSidebarDrawer = () => {
-        HSOverlay.close('#sidebar')
+        // HSOverlay.close('#sidebar')
     }
 
     return (
@@ -35,18 +35,12 @@ export default function MobileScreenNav() {
                     </button>
                     <div className={`p-4`}>
                         <ul className={`flex flex-col gap-y-4 `}>
-                            <li className={`text-gray-700 font-semibold cursor-pointer`}><Link href={route('home')}>Home</Link></li>
-                            <li className={`text-gray-500 font-semibold cursor-pointer`}>Ticket</li>
-                            <li onClick={handleSidebarDrawer} className={`text-gray-500 font-semibold cursor-pointer`}><Link href={route('home', {search: 'tour'})}>Tour</Link></li>
-                            <li onClick={handleSidebarDrawer} className={`text-gray-500 font-semibold cursor-pointer`}><Link href={route('home', {search: 'hotel'})}>Hotel</Link></li>
-                            <li className={`text-gray-500 font-semibold cursor-pointer`}>Visa</li>
-                            <li className={`text-gray-500 font-semibold cursor-pointer`}>About</li>
-                            <li className={`text-gray-500 font-semibold cursor-pointer`}>Contact</li>
+                            <li onClick={handleSidebarDrawer} className={`text-gray-700 font-semibold cursor-pointer uppercase nav_link ${route().current('home') ? 'active' : ''}`}><Link href={route('home')}>Home</Link></li>
+                            <li onClick={handleSidebarDrawer} className={`text-gray-700 font-semibold cursor-pointer uppercase nav_link ${route().current('about_company') ? 'active' : ''}`}><Link href={route('about_company')}>About My Company</Link></li>
+                            <li onClick={handleSidebarDrawer} className={`text-gray-700 font-semibold cursor-pointer uppercase nav_link ${route().current('about_me') ? 'active' : ''}`}><Link href={route('about_me')}>About Me</Link></li>
+                            <li onClick={handleSidebarDrawer} className={`text-gray-700 font-semibold cursor-pointer uppercase nav_link ${route().current('sample-script') ? 'active' : ''}`}><Link href={route('sample-script')}>Sample Scripts</Link></li>
+                            <li onClick={handleSidebarDrawer} className={`text-gray-700 font-semibold cursor-pointer uppercase nav_link ${route().current('contact_details') ? 'active' : ''}`}><Link href={route('contact_details')}>Contact Details</Link></li>
                         </ul>
-
-                        <button className="w-full bg-blue-900 text-white mt-5 px-6 py-2 rounded-lg text-lg font-semibold hover:bg-blue-600">
-                            Log in
-                        </button>
                     </div>
                 </div>
             </div>
