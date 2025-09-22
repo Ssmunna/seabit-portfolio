@@ -26,7 +26,9 @@ const Page = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <div className="container m-auto pb-[30px] md:py-[50px] text-[#7A7A7A] text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
+            <div className="container">
+                <div className="container m-auto pb-[30px] md:py-[50px] text-[#7A7A7A] text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
+            </div>
             <div>
                 <img src={sectionShape} alt="image" className="w-full" />
             </div>

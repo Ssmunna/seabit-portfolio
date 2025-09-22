@@ -4,16 +4,20 @@ import sectionShape4 from "../../../../../public/assets/images/section/sectionSh
 import envelop from "../../../../../public/assets/images/contact/envelop.png";
 import phone from "../../../../../public/assets/images/contact/phone.png";
 import skype from "../../../../../public/assets/images/contact/skype.png";
+import {usePage} from "@inertiajs/react";
 
 const Page = ({ data }) => {
+    const {fileBase} = usePage().props
+    const {hero_section, blogs} = data;
     return (
         <Main>
             <div
-                className={`flex items-center text-white h-[300px] md:h-[667px] mb-[50px] bg-[url('/assets/images/contact/contact.png')] w-full bg-cover bg-[position:20%_center]`}
+                className={`flex items-center text-white h-[300px] md:h-[667px] mb-[50px] w-full bg-cover bg-[position:20%_center]`}
+                style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
                 <div className="w-full px-5 md:mt-[-280px]">
                     <div className="max-w-[1250px] m-auto text-[46px] flex justify-end items-start">
-                        <h3 className="font-[700]">Contact Details</h3>
+                        <h3 className="font-[700]">{hero_section.title}</h3>
                     </div>
                 </div>
             </div>
@@ -95,6 +99,7 @@ const Page = ({ data }) => {
                                     <textarea
                                         name=""
                                         id=""
+                                        rows={6}
                                         className="border border-[#D1CFCF] rounded-md"
                                     ></textarea>
                                 </div>
@@ -111,7 +116,7 @@ const Page = ({ data }) => {
                                     </span>
                                 </p>
                                 <p>
-                                    <button className="btn bg-[#2172E6] text-white uppercase text-[23px] py-[5px] px-[16px] rounded cursor-pointer">
+                                    <button className="btn bg-[#2172E6] text-white uppercase text-[16px] py-[5px] px-[16px] rounded cursor-pointer">
                                         Submit
                                     </button>
                                 </p>

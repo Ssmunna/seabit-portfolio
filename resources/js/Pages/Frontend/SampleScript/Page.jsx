@@ -1,0 +1,61 @@
+import React from "react";
+import Main from "@/Layouts/Frontend/Main.jsx";
+import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
+
+import {usePage} from "@inertiajs/react";
+
+
+const Page = ({ data }) => {
+    const {fileBase} = usePage().props
+    const {hero_section, blogs} = data;
+
+    return (
+        <Main>
+            <div className="flex items-center text-white h-[728px] w-full bg-cover bg-[position:70%_center]"
+                 style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
+            >
+                <div className="w-full px-5">
+                    <div className="max-w-[1250px] m-auto text-[46px] ">
+                        <h3 className="font-[700]">{hero_section.title}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="container m-auto pb-[30px] md:py-[50px] text-[#7A7A7A] text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
+            </div>
+
+            <div className="flex justify-center items-center">
+                <button className="bg-[#E80606] text-white px-[24px] py-[12px] rounded cursor-pointer text-[15px]">
+                    Please enquire here
+                </button>
+            </div>
+
+            <div className="">
+                <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px] space-y-[70px]">
+                    {
+                        blogs.map((blog, i) => (
+                            <div className="grid grid-cols-1 md:grid-cols-2">
+                                <div className="p-5 w-full h-[396px]">
+                                    <img src={`${fileBase}/${blog.image}`} alt="section-image" className={`w-full h-full object-cover rounded-xl`} />
+                                </div>
+                                <div className="p-[50px]">
+                                    <div className="uppercase text-[32px] font-[700] leading-[30px]">
+                                        <h2 className="text-[#111111]" dangerouslySetInnerHTML={{__html: blog.title}}>
+                                        </h2>
+                                    </div>
+                                    <p className="leading-[26px] mt-[20px]" dangerouslySetInnerHTML={{__html: blog.description}}></p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div>
+                <img src={sectionShape4} className="w-full" alt="" />
+            </div>
+        </Main>
+    );
+};
+
+export default Page;
