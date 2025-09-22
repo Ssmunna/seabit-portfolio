@@ -2,6 +2,8 @@ import React from "react";
 import Main from "@/Layouts/Frontend/Main.jsx";
 import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
 import envelop from "../../../../../public/assets/images/contact/envelop.png";
+import phone from "../../../../../public/assets/images/contact/phone.png";
+import skype from "../../../../../public/assets/images/contact/skype.png";
 
 const Page = ({ data }) => {
     return (
@@ -15,11 +17,11 @@ const Page = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <div className="container m-auto pb-[30px] md:py-[50px] text-center text-[#7A7A7A] text-[16px]"></div>
+            {/* <div className="container m-auto pb-[30px] md:py-[50px] text-center text-[#7A7A7A] text-[16px]"></div> */}
 
-            <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px]">
-                <div className="grid grid-cols-1 md:grid-cols-[65%_35%] md:p-[50px] md:gap-10">
-                    <div>
+            <div className="max-w-[1250px] m-auto py-[50px]">
+                <div className="px-[20px] grid grid-cols-1 md:grid-cols-[65%_35%] md:p-[50px] md:gap-10">
+                    <div className="text-[#7A7A7A] text-[16px]">
                         <div>
                             <h2 className="text-[32px] font-[700] text-[#111111]">
                                 Request for more information.
@@ -116,17 +118,45 @@ const Page = ({ data }) => {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className="space-y-[20px] mt-[30px] md:mt-[0]">
                         <div>
-                            <div className="flex items-center space-x-[20px]">
+                            <div className="flex items-center space-x-[15px]">
                                 <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
                                     <img src={envelop} alt="envelop" />
                                 </div>
-                                <div className="text-[28px] color-[green]">
+                                <div className="text-[28px] color-[#111111] font-[700]">
                                     Email
                                 </div>
                             </div>
-                            <p>Georges.Salo@maisonproductions.com</p>
+                            <p className="mt-[20px] text-[#7A7A7A] font-[700]">
+                                Georges.Salo@maisonproductions.com
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex items-center space-x-[15px]">
+                                <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
+                                    <img src={phone} alt="phone" />
+                                </div>
+                                <div className="text-[28px] color-[#111111] font-[700]">
+                                    Phone
+                                </div>
+                            </div>
+                            <p className="mt-[20px] text-[#7A7A7A] font-[700]">
+                                +65 9738 2418
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex items-center space-x-[15px]">
+                                <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
+                                    <img src={skype} alt="skype" />
+                                </div>
+                                <div className="text-[28px] color-[#111111] font-[700]">
+                                    Skype
+                                </div>
+                            </div>
+                            <p className="mt-[20px] text-[#7A7A7A] font-[700]">
+                                Georges.888
+                            </p>
                         </div>
                     </div>
                 </div>
