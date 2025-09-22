@@ -5,8 +5,7 @@ import {usePage} from "@inertiajs/react";
 
 const Page = ({ data }) => {
     const {fileBase} = usePage().props
-    const {hero_section, blogs} = data;
-    console.log(hero_section)
+    const {hero_section} = data;
     return (
         <Main>
             <div

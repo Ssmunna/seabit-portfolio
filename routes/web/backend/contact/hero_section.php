@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\Contact\HeroSectionController;
+use App\Http\Controllers\Backend\ContactDetails\HeroSectionController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['as'=> 'admin.contact-details.', 'prefix' => 'contact-details' ,'middleware' => ['auth']], function () {

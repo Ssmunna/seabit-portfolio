@@ -1,55 +1,10 @@
-import { BiHomeAlt } from "react-icons/bi";
-import {
-    FaChartBar,
-    FaClipboardList, FaCog,
-    FaHotel, FaLifeRing,
-    FaPassport,
-    FaPlane, FaSignOutAlt,
-    FaSuitcase,
-    FaTachometerAlt,
-    FaUsers
-} from "react-icons/fa";
-import {useEffect, useState} from "react";
-import {Link, router, usePage} from "@inertiajs/react";
-import {getQueries} from "@/helpers/helper.js";
+
+import {Link, usePage} from "@inertiajs/react";
 import {IoHomeSharp} from "react-icons/io5";
-import {GrContactInfo} from "react-icons/gr";
 import {BsFillInfoSquareFill} from "react-icons/bs";
 import {TbListDetails} from "react-icons/tb";
 import {MdContactMail, MdVideoLibrary} from "react-icons/md";
 import {FaGear} from "react-icons/fa6";
-
-
-const menuItems = [
-    {
-        label: 'Dashboard',
-        link: 'dashboard',
-        icon: <BiHomeAlt />,
-    },
-    {
-        label: 'Tour Packages',
-        icon: <FaSuitcase />,
-        activeLinks: ['admin.tour.destination.list'],
-        children: [
-            {
-                label: 'Destination',
-                link: 'admin.tour.destination.list',
-                session_key: 'tour_destination_pagination'
-            },
-        ],
-    },
-    {
-        label: 'Settings',
-        icon: <FaCog />,
-        children: [
-        ],
-    },
-    {
-        label: 'Logout',
-        icon: <FaSignOutAlt />,
-    },
-];
-
 
 export default function Sidebar() {
     const { url: currentUrl } = usePage()
@@ -200,13 +155,20 @@ export default function Sidebar() {
                                 </ul>
                             </div>
                         </li>
+
+                        <li>
+                            <Link href={route('admin.contact.list')} className={`flex items-center ${route().current('admin.contact.list') ? 'bg-gray-300' : ''} gap-x-3.5 py-2 px-2.5 bg-gray-100 text-[15px] text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-white`}>
+                                <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
 
                 <footer className="mt-auto p-3 flex flex-col">
                     <ul className="flex flex-col gap-y-1">
                         <li>
-                            <Link href={route('admin.app-setting.page')} className="w-full flex items-center gap-x-2 py-2 px-2.5 text-[15px] text-gray-800 rounded-lg hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 dark:text-neutral-200">
+                            <Link href={route('admin.app-setting.page')} className={`w-full flex items-center gap-x-2 py-2 px-2.5 text-[15px] text-gray-800 rounded-lg hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 dark:text-neutral-200`}>
                                 <FaGear className={`size-4`} />
                                 App Setting
                             </Link>

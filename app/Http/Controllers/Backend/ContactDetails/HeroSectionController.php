@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Contact;
+namespace App\Http\Controllers\Backend\ContactDetails;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\HeroSection\HeroSectionUpdateRequest;
@@ -24,7 +24,7 @@ class HeroSectionController extends Controller
         $response = $this->handleSession( $this->service->getData( ['page_name' => CONTACT_DETAILS_PAGE]));
 
         return $response['success'] ?
-            Inertia::render('Backend/Contact/Page', $response)
+            Inertia::render('Backend/ContactDetails/Page', $response)
             : back()->withErrors($response['message']);
     }
 

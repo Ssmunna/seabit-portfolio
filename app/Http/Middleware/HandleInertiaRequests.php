@@ -30,7 +30,7 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        $settings = AppSetting::whereIn('key', ['favicon','logo'])->get()->keyBy('key');
+        $settings = AppSetting::whereIn('key', ['favicon', 'logo', 'app_name', 'contact_info', 'social_links'])->select('key', 'value')->get()->keyBy('key');
 
         return [
             ...parent::share($request),
@@ -39,7 +39,8 @@ class HandleInertiaRequests extends Middleware
             ],
             'fileBase' => request()->getSchemeAndHttpHost(),
             'favicon' => isset($settings['favicon']) ? json_decode($settings['favicon']->value, true) : null,
-            'logo' => isset($settings['logo']) ? json_decode($settings['logo']->value, true) : null
+            'logo' => isset($settings['logo']) ? json_decode($settings['logo']->value, true) : null,
+            'app_settings' => $settings,
         ];
     }
 }

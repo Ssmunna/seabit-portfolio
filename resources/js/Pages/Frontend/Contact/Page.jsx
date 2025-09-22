@@ -4,11 +4,41 @@ import sectionShape4 from "../../../../../public/assets/images/section/sectionSh
 import envelop from "../../../../../public/assets/images/contact/envelop.png";
 import phone from "../../../../../public/assets/images/contact/phone.png";
 import skype from "../../../../../public/assets/images/contact/skype.png";
-import {usePage} from "@inertiajs/react";
+import {useForm, usePage} from "@inertiajs/react";
+import InputError from "@/Components/InputError.jsx";
 
-const Page = ({ data }) => {
-    const {fileBase} = usePage().props
-    const {hero_section, blogs} = data;
+const Page = ({ data:contactData }) => {
+    const {fileBase, app_settings} = usePage().props
+    const {hero_section, blogs} = contactData;
+    const contact_info = app_settings['contact_info'] ? JSON.parse(app_settings['contact_info']['value']) : null;
+
+    const {data, setData, processing, errors, post, reset} = useForm({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        company_name: ''
+    });
+
+    const handleFormInput = (e) => {
+        const {id, value} = e.target
+
+        setData(prev => ({
+            ...prev,
+            [id]: value
+        }))
+    }
+
+
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        post(route('store.contact'), {
+            preserveScroll: true,
+            preserveState: true,
+            onSuccess: () => reset()
+        })
+    }
+
     return (
         <Main>
             <div
@@ -35,96 +65,116 @@ const Page = ({ data }) => {
                                 shortly.
                             </p>
                         </div>
-                        <div className="space-y-3">
-                            <div className="grid md:grid-cols-2 gap-5">
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor=""
-                                        className="text-[#111111] text-[19px]"
-                                    >
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="border border-[#D1CFCF] rounded-md"
-                                    />
+                        <form onSubmit={handleSubmitForm}>
+                            <div className="space-y-3">
+                                <div className="grid md:grid-cols-2 gap-5">
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="name"
+                                            className="text-[#111111] text-[19px]"
+                                        >
+                                            Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={data.name}
+                                            id={`name`}
+                                            onChange={handleFormInput}
+                                            className="border border-[#D1CFCF] rounded-md"
+                                        />
+                                        <InputError message={errors.name} className="mt-2" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="email"
+                                            className="text-[#111111] text-[19px]"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            value={data.email}
+                                            id={`email`}
+                                            onChange={handleFormInput}
+                                            className="border border-[#D1CFCF] rounded-md"
+                                        />
+                                        <InputError message={errors.email} className="mt-2" />
+                                    </div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor=""
-                                        className="text-[#111111] text-[19px]"
-                                    >
-                                        Email
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="border border-[#D1CFCF] rounded-md"
-                                    />
+                                <div className="grid md:grid-cols-2 gap-5">
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="phone"
+                                            className="text-[#111111] text-[19px]"
+                                        >
+                                            Mobile Number
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={data.phone}
+                                            id={`phone`}
+                                            onChange={handleFormInput}
+                                            className="border border-[#D1CFCF] rounded-md"
+                                        />
+                                        <InputError message={errors.phone} className="mt-2" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="company_name"
+                                            className="text-[#111111] text-[19px]"
+                                        >
+                                            Company Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={data.company_name}
+                                            id={`company_name`}
+                                            onChange={handleFormInput}
+                                            className="border border-[#D1CFCF] rounded-md"
+                                        />
+                                        <InputError message={errors.company_name} className="mt-2" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="grid md:grid-cols-2 gap-5">
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor=""
-                                        className="text-[#111111] text-[19px]"
-                                    >
-                                        Mobile Number
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="border border-[#D1CFCF] rounded-md"
-                                    />
+                                <div>
+                                    <div className="flex flex-col">
+                                        <label
+                                            htmlFor="message"
+                                            className="text-[#111111] text-[19px]"
+                                        >
+                                            Message
+                                        </label>
+                                        <textarea
+                                            value={data.message}
+                                            id={`message`}
+                                            onChange={handleFormInput}
+                                            rows={6}
+                                            className="border border-[#D1CFCF] rounded-md"
+                                        ></textarea>
+                                        <InputError message={errors.message} className="mt-2" />
+                                    </div>
                                 </div>
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor=""
-                                        className="text-[#111111] text-[19px]"
-                                    >
-                                        Company Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="border border-[#D1CFCF] rounded-md"
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="flex flex-col">
-                                    <label
-                                        htmlFor=""
-                                        className="text-[#111111] text-[19px]"
-                                    >
-                                        Message
-                                    </label>
-                                    <textarea
-                                        name=""
-                                        id=""
-                                        rows={6}
-                                        className="border border-[#D1CFCF] rounded-md"
-                                    ></textarea>
-                                </div>
-                            </div>
-                            <div>
-                                <p className="text-[16px] color-[#7A7A7A] my-3">
-                                    This form is protected by reCAPTCHA and the
-                                    <span className="text-[#12b6e9]">
+                                <div>
+                                    <p className="text-[16px] color-[#7A7A7A] my-3">
+                                        This form is protected by reCAPTCHA and the
+                                        <span className="text-[#12b6e9]">
                                         Google Privacy Policy
                                     </span>{" "}
-                                    and <br />
-                                    <span className="text-[#12b6e9]">
+                                        and <br />
+                                        <span className="text-[#12b6e9]">
                                         Terms of Service apply.
                                     </span>
-                                </p>
-                                <p>
-                                    <button className="btn bg-[#2172E6] text-white uppercase text-[16px] py-[5px] px-[16px] rounded cursor-pointer">
-                                        Submit
-                                    </button>
-                                </p>
+                                    </p>
+                                    <p>
+                                        <button disabled={processing} className="btn bg-[#2172E6] disabled:bg-gray-400 text-white uppercase text-[16px] py-[5px] px-[16px] rounded cursor-pointer">
+                                            Submit
+                                        </button>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div className="space-y-[20px] mt-[30px] md:mt-[0]">
-                        <div>
+                        <a href={`mailto:${contact_info.email}`}>
                             <div className="flex items-center space-x-[15px]">
                                 <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
                                     <img src={envelop} alt="envelop" />
@@ -134,10 +184,10 @@ const Page = ({ data }) => {
                                 </div>
                             </div>
                             <p className="mt-[20px] text-[#7A7A7A] font-[700]">
-                                Georges.Salo@maisonproductions.com
+                                {contact_info.email}
                             </p>
-                        </div>
-                        <div>
+                        </a>
+                        <a href={`tel:${contact_info.phone}`}>
                             <div className="flex items-center space-x-[15px]">
                                 <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
                                     <img src={phone} alt="phone" />
@@ -147,10 +197,10 @@ const Page = ({ data }) => {
                                 </div>
                             </div>
                             <p className="mt-[20px] text-[#7A7A7A] font-[700]">
-                                +65 9738 2418
+                                {contact_info.phone}
                             </p>
-                        </div>
-                        <div>
+                        </a>
+                        <a href={`${contact_info.skype}`}>
                             <div className="flex items-center space-x-[15px]">
                                 <div className="h-[104px] w-[104px] flex items-center justify-center border border-[#2172E6] rounded-full">
                                     <img src={skype} alt="skype" />
@@ -160,9 +210,9 @@ const Page = ({ data }) => {
                                 </div>
                             </div>
                             <p className="mt-[20px] text-[#7A7A7A] font-[700]">
-                                Georges.888
+                                {contact_info.skype}
                             </p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

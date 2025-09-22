@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Frontend\ContactDetailsController;
+use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/contact-details', [ContactDetailsController::class, 'getList'])->name('contact_details');
+Route::post('/store/contact', [ContactController::class, 'storeData'])->name('store.contact');

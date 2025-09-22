@@ -14,5 +14,5 @@ Route::get('/', [HomeController::class, 'getList'])->name('home');
 //
 //
 //Route::get('contact-details', function () {
-//    return Inertia::render('Frontend/Contact/Page');
+//    return Inertia::render('Frontend/ContactDetails/Page');
 //});
