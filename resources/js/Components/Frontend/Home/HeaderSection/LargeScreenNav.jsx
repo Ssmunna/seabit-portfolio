@@ -7,8 +7,8 @@ export default function LargeScreenNav() {
                 <div className={`flex gap-x-10 items-center py-3`}>
                     <ul className={`flex items-center gap-x-10 `}>
                         <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}><Link href={route('home')}>Home</Link></li>
-                        <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}>About My Company</li>
-                        <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}><Link href={route('home', {search: 'tour'})}>About Me</Link></li>
+                        <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}><Link href={route('about_company')}>About My Company</Link></li>
+                        <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}><Link href={route('about_me')}>About Me</Link></li>
                         <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}><Link href={route('home', {search: 'hotel'})}>Sample Scripts</Link></li>
                         <li className={`text-gray-700 font-semibold cursor-pointer uppercase`}>Contact Details</li>
                     </ul>

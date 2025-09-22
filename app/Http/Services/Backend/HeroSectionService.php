@@ -30,7 +30,7 @@ class HeroSectionService
              }
 
             $dbQuery = HeroSection::query();
-            $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['page']);
+            $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['page_name']);
             $hero_section = $dbQuery->first();
 
             return $this->response(['hero_section' => $hero_section])->success();
@@ -48,7 +48,7 @@ class HeroSectionService
     public function updateData (array $payload): array
     {
         try {
-            $heroSection = HeroSection::where('page', $payload['page'])->first();
+            $heroSection = HeroSection::where('page_name', $payload['page_name'])->first();
 
             $imageName = null;
             if(!$heroSection) {
@@ -80,7 +80,7 @@ class HeroSectionService
     {
         $data = [
             'title' => $payload['title'],
-            'page' => $payload['page'],
+            'page_name' => $payload['page_name'],
             'image' => $imageName,
         ];
 

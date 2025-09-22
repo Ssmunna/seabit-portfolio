@@ -12,6 +12,6 @@ class HeroSection extends Model
         'title',
         'description',
         'image',
-        'page'
+        'page_name'
     ];
 }

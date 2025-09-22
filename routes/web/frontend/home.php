@@ -6,19 +6,6 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 
-//Route::get('/contact', function() {
-//    return view('frontend.contact');
-//});
-
-Route::get('about-my-company', function () {
-    return Inertia::render('Frontend/AboutMyCompany/Page');
-})->name('home');
-
-
-Route::get('about-me', function () {
-    return Inertia::render('Frontend/AboutMe/Page');
-})->name('home');
-
 
 Route::get('contact-details', function () {
     return Inertia::render('Frontend/Contact/Page');

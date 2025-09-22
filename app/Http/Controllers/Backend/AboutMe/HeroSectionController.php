@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\AboutMe;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\AboutCompany\HeroSection\HeroSectionUpdateRequest;
+use App\Http\Requests\Backend\HeroSection\HeroSectionUpdateRequest;
 use App\Http\Services\Backend\HeroSectionService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,12 +21,13 @@ class HeroSectionController extends Controller
      */
     public function getData(Request $request): Response|RedirectResponse
     {
-        $response = $this->handleSession( $this->service->getData( ['page' => ABOUT_ME_PAGE]));
+        $response = $this->handleSession( $this->service->getData( ['page_name' => ABOUT_ME_PAGE]));
 
         return $response['success'] ?
             Inertia::render('Backend/AboutMe/Page', $response)
             : back()->withErrors($response['message']);
     }
+
 
     /**
      * @param HeroSectionUpdateRequest $request

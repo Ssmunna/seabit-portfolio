@@ -14,7 +14,7 @@ export default function Page({data:content}){
         title: '',
         description: '',
         image: '',
-        page: 'sample_script'
+        page_name: 'sample_script'
     });
     const uploadFile = useRef(null);
     const [previewImage, setPreviewImage] = useState('');
@@ -33,7 +33,7 @@ export default function Page({data:content}){
                 title: '',
                 description: '',
                 image: '',
-                page: 'sample_script'
+                page_name: 'sample_script'
             })
             setPreviewImage(null)
         }

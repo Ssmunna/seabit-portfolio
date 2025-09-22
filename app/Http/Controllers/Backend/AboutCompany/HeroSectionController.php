@@ -21,7 +21,7 @@ class HeroSectionController extends Controller
      */
     public function getData(Request $request): Response|RedirectResponse
     {
-        $response = $this->handleSession( $this->service->getData( ['page' => ABOUT_COMPANY_PAGE]));
+        $response = $this->handleSession( $this->service->getData( ['page_name' => ABOUT_COMPANY_PAGE]));
 
         return $response['success'] ?
             Inertia::render('Backend/AboutCompany/Page', $response)
