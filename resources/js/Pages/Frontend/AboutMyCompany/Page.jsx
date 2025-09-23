@@ -6,34 +6,8 @@ import section2 from "../../../../../public/assets/images/aboutMyCompany/section
 import section3 from "../../../../../public/assets/images/aboutMyCompany/section-3.png";
 import section4 from "../../../../../public/assets/images/aboutMyCompany/section-4.png";
 
-import sectionShape2 from "../../../../../public/assets/images/section/sectionShape2.png";
+import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
 import {usePage} from "@inertiajs/react";
-
-const aboutMyCompany = {
-    banner_text: "banner-url",
-    // banner_img: "assets/images/aboutMyCompany/aboutMyCompany.png",
-    hero_mid_1:
-        "Maison D’eau De Vie (House of Water of Life) represents an establishment related to the fountain of life, associated unique locations where life-changing events occur. Our company explores themes of rebirth, transformation, or self-discovery, weaving together elements of mystery, drama, and personal growth in an engaging cinematic experience. It is a setting for character-driven stories, where individuals undergo significant changes and confront their pasts or inner demons, captivating audiences with its depth and symbolism",
-    hero_mid_2:
-        "From producing compelling films to collaborating with renowned companies and taking on acting roles, my contributions span various aspects of the filmmaking process. With a notable track record of working with esteemed production companies and talented individuals, I continuously push the boundaries of creativity and deliver engaging content to audiences worldwide.",
-    section1: {
-        heading: "PRODUCER AND Collaborator",
-        text: "I have had the privilege of collaborating with esteemed production companies and industry leaders, including DKZ Productions, Zero Gravity Management, and Film Can Productions. Through these collaborations, I have contributed my expertise and creative vision to the development and production of numerous projects. Notably, I served as an Executive Producer, which starred acclaimed actors Harry Hamlin and Kristen Kerr. This project showcased my proficiency in collaborating with skilled professionals to create a captivating cinematic experience that resonated profoundly with audiences.",
-        image: "image url",
-    },
-    section2: {
-        heading: "Development and Script Collaboration",
-        text: "I have had the privilege of collaborating with esteemed production companies and industry leaders, including DKZ Productions, Zero Gravity Management, and Film Can Productions. Through these collaborations, I have contributed my expertise and creative vision to the development and production of numerous projects. Notably, I served as an Executive Producer, which starred acclaimed actors Harry Hamlin and Kristen Kerr. This project showcased my proficiency in collaborating with skilled professionals to create a captivating cinematic experience that resonated profoundly with audiences.",
-        image: "image url",
-    },
-    section3: {
-        heading: "ACTING Endeavours",
-        text: "I have had the privilege of collaborating with esteemed production companies and industry leaders, including DKZ Productions, Zero Gravity Management, and Film Can Productions. Through these collaborations, I have contributed my expertise and creative vision to the development and production of numerous projects. Notably, I served as an Executive Producer, which starred acclaimed actors Harry Hamlin and Kristen Kerr. This project showcased my proficiency in collaborating with skilled professionals to create a captivating cinematic experience that resonated profoundly with audiences.",
-        image: "image url",
-    },
-};
-
-// console.log(aboutMyCompany);
 
 const Page = ({ data }) => {
     const {fileBase} = usePage().props
@@ -44,19 +18,17 @@ const Page = ({ data }) => {
             <div className="flex items-center text-white h-[728px] w-full bg-cover bg-[position:70%_center]"
                  style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
-                <div className="w-full px-5">
-                    <div className="max-w-[1250px] m-auto text-[46px] ">
-                        <h3 className="font-[700]">{hero_section.title}</h3>
+                <div className="container mx-auto">
+                    <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-8">
+                        <div className="text-[45px]">
+                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
+                        </div>
+                        <div className="text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="container m-auto pb-[30px] md:py-[50px] text-[#7A7A7A] text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
-            </div>
-            <div>
-                <img src={sectionShape} alt="image" className="w-full" />
-            </div>
-            <div className="bg-[#ECECEC]">
+
+            <div className="bg-[#FFFFFF]">
                 <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px] space-y-[70px]">
                     {
                         blogs.map((blog, i) => (
@@ -77,7 +49,7 @@ const Page = ({ data }) => {
                 </div>
             </div>
             <div>
-                <img src={sectionShape2} className="w-full" alt="" />
+                <img src={sectionShape4} className="w-full" alt="" />
             </div>
         </Main>
     );

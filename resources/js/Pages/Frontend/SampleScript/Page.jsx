@@ -14,21 +14,19 @@ const Page = ({ data }) => {
             <div className="flex items-center text-white h-[728px] w-full bg-cover bg-[position:70%_center]"
                  style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
-                <div className="w-full px-5">
-                    <div className="max-w-[1250px] m-auto text-[46px] ">
-                        <h3 className="font-[700]">{hero_section.title}</h3>
+                <div className="container mx-auto">
+                    <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-8">
+                        <div className="text-[45px]">
+                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
+                        </div>
+                        <div className="text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
+                        <div className="flex justify-center items-center">
+                            <Link href={route('contact_details')} className="bg-[#E80606] text-white px-[24px] py-[12px] rounded cursor-pointer text-[15px]">
+                                Please enquire here
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="container">
-                <div className="container m-auto pb-[30px] md:py-[50px] text-[#7A7A7A] text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
-            </div>
-
-            <div className="flex justify-center items-center">
-                <Link href={route('contact_details')} className="bg-[#E80606] text-white px-[24px] py-[12px] rounded cursor-pointer text-[15px]">
-                    Please enquire here
-                </Link>
             </div>
 
             <div className="">

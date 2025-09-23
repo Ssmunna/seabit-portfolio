@@ -42,18 +42,22 @@ const Page = ({ data:contactData }) => {
     return (
         <Main>
             <div
-                className={`flex items-center text-white h-[300px] md:h-[667px] mb-[50px] w-full bg-cover bg-[position:20%_center]`}
+                className={`flex items-center text-white h-[300px] md:h-[667px] w-full bg-cover bg-[position:20%_center]`}
                 style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
-                <div className="w-full px-5 md:mt-[-280px]">
-                    <div className="max-w-[1250px] m-auto text-[46px] flex justify-end items-start">
-                        <h3 className="font-[700]">{hero_section.title}</h3>
+                <div className="w-full px-5 ">
+                    <div className="container mx-auto">
+                        <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-8">
+                            <div className="text-[45px]">
+                                <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             {/* <div className="container m-auto pb-[30px] md:py-[50px] text-center text-[#7A7A7A] text-[16px]"></div> */}
 
-            <div className="max-w-[1250px] m-auto py-[50px]">
+            <div className="max-w-[1250px] m-auto">
                 <div className="px-[20px] grid grid-cols-1 md:grid-cols-[65%_35%] md:p-[50px] md:gap-10">
                     <div className="text-[#7A7A7A] text-[16px]">
                         <div>

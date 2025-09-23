@@ -12,7 +12,7 @@ const Page = ({ data }) => {
                 className={`bg-[#111111] flex items-center text-white h-[300px] md:h-[826px] w-full bg-cover`}
                 style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
-                <div className="w-full px-5 md:mt-[-280px]">
+                <div className="w-full px-5">
                     <div className="max-w-[1250px] m-auto text-[46px] flex justify-center items-start">
                         <h3 className="font-[700] max-w-[750px] text-center leading-[50px]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
                     </div>
