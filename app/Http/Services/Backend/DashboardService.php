@@ -21,7 +21,7 @@ class DashboardService
            return $this->response([
                'unique_visitor' => $uniqueVisitor,
                'total_contact' => $totalContact,
-           ])->success('Login Successfully');
+           ])->success();
         } catch (\Exception $exception) {
             return $this->response( )->error($exception->getMessage());
         }

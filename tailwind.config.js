@@ -14,7 +14,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter', 'ui-sans-serif', 'system-ui'],
                 questrial: ['Questrial', 'sans-serif'],
                 gilroy: ['Gilroy', 'Helvetica', 'Arial', 'serif'],
             },

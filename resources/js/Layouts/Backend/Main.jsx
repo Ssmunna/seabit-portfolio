@@ -1,12 +1,20 @@
 import Header from "@/Layouts/Backend/Header.jsx";
 import Sidebar from "@/Layouts/Backend/Sidebar.jsx";
 import Notifier from "@/Components/Utils/Notification/Notifier.jsx";
+import {Head, usePage} from "@inertiajs/react";
 
 export default function Main({children}){
     setTimeout(() => window.HSStaticMethods.autoInit(), 100)
 
+    const {app_settings, fileBase} = usePage().props
+    const favicon = app_settings['favicon'] ? JSON.parse(app_settings['favicon']['value']) : null;
+
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/svg+xml" href={fileBase + '/' +favicon?.path} />
+            </Head>
+
             <Header/>
             <Sidebar/>
             <Notifier/>

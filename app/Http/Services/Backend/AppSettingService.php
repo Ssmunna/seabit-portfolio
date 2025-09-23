@@ -81,6 +81,7 @@ class AppSettingService
                 "app_name",
                 "contact_info",
                 "social_links",
+                "copyright"
             ];
             foreach ($others as $key){
                 if(array_key_exists($key, $payload)){

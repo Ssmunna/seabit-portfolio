@@ -15,7 +15,7 @@ export default function LargeScreenNav() {
                     </ul>
                 </div>
                 <div className={`p-5`}>
-                    <img src={`${fileBase}/${logo.path}`} alt="logo" className="h-13" />
+                    <img src={`${fileBase}/${logo?.path}`} alt="logo" className="h-13" />
                 </div>
             </div>
         </div>

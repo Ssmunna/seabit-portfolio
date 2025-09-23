@@ -19,7 +19,7 @@ class ContactDetailsController extends Controller
      */
     public function getList(Request $request): Response
     {
-        $response = $this->service->getListData(['page_name' => CONTACT_DETAILS_PAGE]);
+        $response = $this->handleSession( $this->service->getListData(['page_name' => CONTACT_DETAILS_PAGE]));
 
         return Inertia::render('Frontend/Contact/Page', $response);
     }

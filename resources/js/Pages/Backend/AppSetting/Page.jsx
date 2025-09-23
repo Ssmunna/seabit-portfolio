@@ -30,6 +30,9 @@ export default function Page({data:appSettingData}){
             facebook: '',
             instagram: ''
         },
+        copyright: {
+            content: ''
+        }
     });
 
 
@@ -43,7 +46,6 @@ export default function Page({data:appSettingData}){
 
             Object.keys(prev).forEach((key) => {
                 const value = safeParse(key);
-                console.log(value.path)
                 if (value) {
                     updated[key] = deepUpdate(prev[key], value);
                 }
@@ -240,6 +242,11 @@ export default function Page({data:appSettingData}){
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="form-control mt-3">
+                    <label className={`label`} htmlFor="content">Copyright :</label>
+                    <input type="text" value={data.copyright.content} onChange={handleInputText} id='content' name={`copyright`} placeholder={`Enter copyright`} className={`input`}/>
                 </div>
                 <div className="form-control pt-4">
                     <div className="w-full flex gap-x-4">

@@ -29,7 +29,7 @@ class ContactService
         try {
             Contact::create( $this->_formatedContactCreatedData( $payload));
 
-            return $this->response()->success('Contact created successfully');
+            return $this->response()->success('Message send Successfully');
 
         } catch (\Exception $exception) {
             return $this->response()->error($exception->getMessage());
