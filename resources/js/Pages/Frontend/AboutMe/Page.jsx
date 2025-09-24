@@ -8,7 +8,6 @@ import {usePage} from "@inertiajs/react";
 const Page = ({ data }) => {
     const {fileBase} = usePage().props
     const {hero_section, blogs, bio_section} = data;
-    console.log(bio_section)
 
     return (
         <Main>
@@ -52,12 +51,12 @@ const Page = ({ data }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 md:p-[50px] md:gap-10">
                     <div>
                         <img
-                            src={`${fileBase}/${bio_section.image}`}
+                            src={`${fileBase}/${bio_section?.image}`}
                             alt=""
                             className="max-h-[540px] m-auto"
                         />
                     </div>
-                    <div className={`text-[10px] md:text-[16px] mt-[20px]`} dangerouslySetInnerHTML={{__html: bio_section.description}}></div>
+                    <div className={`text-[10px] md:text-[16px] mt-[20px]`} dangerouslySetInnerHTML={{__html: bio_section?.description}}></div>
                 </div>
             </div>
             <div className="">
