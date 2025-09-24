@@ -6,7 +6,7 @@ export default function TextEditor({ value, setValue }) {
         toolbar: [
             [{ 'header': [1, 2, false] }],
             ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' },'link'],
             [{ 'align': [] }], // ✅ alignment
             [{ 'color': [] }], // ✅ text color & background
         ]

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Services\Backend;
 
-use App\Models\HeroSection;
+use App\Models\BlogSection;
 use App\Traits\FileSaver;
 use App\Traits\Request;
 use App\Traits\Response;
@@ -9,7 +9,7 @@ use Bitsmind\GraphSql\Facades\QueryAssist;
 use Bitsmind\GraphSql\QueryAssist as QueryAssistTrait;
 
 
-class HeroSectionService
+class BioSectionService
 {
     use Request,Response, QueryAssistTrait, FileSaver;
 
@@ -27,13 +27,13 @@ class HeroSectionService
 
             if (!array_key_exists('graph', $query)) {
                 $query['graph'] = '{*}';
-             }
+            }
 
-            $dbQuery = HeroSection::query();
+            $dbQuery = BlogSection::query();
             $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['page_name']);
-            $hero_section = $dbQuery->first();
+            $bio_section = $dbQuery->first();
 
-            return $this->response(['hero_section' => $hero_section])->success();
+            return $this->response(['bio_section' => $bio_section])->success();
         }
         catch (\Exception $exception) {
             return $this->response()->error($exception->getMessage());
@@ -48,23 +48,23 @@ class HeroSectionService
     public function updateData (array $payload): array
     {
         try {
-            $heroSection = HeroSection::where('page_name', $payload['page_name'])->first();
+            $heroSection = BlogSection::where('page_name', $payload['page_name'])->first();
 
             $imageName = null;
             if(!$heroSection) {
                 if(!empty($payload['image'])){
-                    $imageName = $this->upload_file( $payload['image'], 'home', 'hero-section');
+                    $imageName = $this->upload_file( $payload['image'], 'home', 'blog-section');
                 }
-                HeroSection::create( $this->_formatedHeroSectionCreatedData( $payload, $imageName));
+                BlogSection::create( $this->_formatedBioSectionCreatedData( $payload, $imageName));
             }
             else{
                 if(!empty($payload['image'])){
-                    $imageName = $this->upload_file( $payload['image'], 'home', 'hero-section', $heroSection->image);
+                    $imageName = $this->upload_file( $payload['image'], 'home', 'blog-section', $heroSection->image);
                 }
-                $heroSection->update( $this->_formatedHeroSectionUpdatedData( $payload, $imageName));
+                $heroSection->update( $this->_formatedBioSectionUpdatedData( $payload, $imageName));
             }
 
-            return $this->response()->success('HeroSection updated successfully');
+            return $this->response()->success('Bio section updated successfully');
 
         } catch (\Exception $exception) {
             return $this->response()->error($exception->getMessage());
@@ -76,10 +76,9 @@ class HeroSectionService
      * @param string $imageName
      * @return array
      */
-    private function _formatedHeroSectionCreatedData(array $payload, string $imageName): array
+    private function _formatedBioSectionCreatedData(array $payload, string $imageName): array
     {
         $data = [
-            'title' => $payload['title'],
             'page_name' => $payload['page_name'],
             'image' => $imageName,
         ];
@@ -95,11 +94,10 @@ class HeroSectionService
      * @param string|null $imageName
      * @return array
      */
-    private function _formatedHeroSectionUpdatedData(array $payload, string $imageName = null): array
+    private function _formatedBioSectionUpdatedData(array $payload, string $imageName = null): array
     {
         $data = [];
 
-        if(array_key_exists('title', $payload) && !empty($payload['title']))                $data['title']          = $payload['title'];
         if(array_key_exists('description', $payload) && !empty($payload['description']))    $data['description']    = $payload['description'];
         if($imageName)                                                                           $data['image']          = $imageName;
 

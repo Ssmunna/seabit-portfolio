@@ -103,6 +103,12 @@ export default function Sidebar() {
                                             Blog Section
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link href={route('admin.about-me.bio.page')} className={`flex items-center gap-x-2.5 pr-2.5 py-1 text-[15px] text-gray-800 rounded-lg ${route().current('admin.about-me.bio.page') ? 'bg-gray-50' : ''} hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-neutral-200`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 1 0-6a3 3 0 0 1 0 6Z"/></svg>
+                                            Bio Section
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

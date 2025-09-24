@@ -38,9 +38,15 @@ class BlogService
 
             $heroSection = HeroSection::where('page_name', $query['page_name'])->select('title', 'image', 'description')->first();
 
+            $query['page_name'] = 'about-me-bio';
+            $dbQuery = BlogSection::query();
+            $dbQuery = QueryAssist::queryWhere($dbQuery, $query, ['page_name']);
+            $bio_section = $dbQuery->first();
+
             return $this->response([
                 'blogs' => $blogs,
                 'hero_section' => $heroSection,
+                'bio_section' => $bio_section,
                 ...$query
             ])->success();
         }

@@ -113,7 +113,7 @@ export default function Page({data: blogListData}){
                     </div>
 
                     <div className="w-full p-5">
-                        <div className="flex justify-between  items-center my-4 text-[.75rem]">
+                        <div className="flex flex-col md:flex-row md:justify-between  items-center gap-3 my-4 text-[.75rem]">
                             <LengthDropdown
                                 callback={(value) => {
                                     setPagination(prevState => ({...prevState, page: 1, length: value}))
@@ -121,7 +121,7 @@ export default function Page({data: blogListData}){
                                 }}
                                 placeholder={pagination.length}
                             />
-                            <div className="flex items-center justify-end gap-3 flex-wrap">
+                            <div className="flex flex-col md:flex-row items-center md:justify-end gap-3 flex-wrap">
                                 <StatusFilter status={blogListData.blogStatus} pagination={pagination} setPagination={setPagination} setGo={setGo} segment="Blog" />
 
                                 <SearchBox

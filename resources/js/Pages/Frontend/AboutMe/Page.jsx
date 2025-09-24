@@ -7,7 +7,8 @@ import {usePage} from "@inertiajs/react";
 
 const Page = ({ data }) => {
     const {fileBase} = usePage().props
-    const {hero_section, blogs} = data;
+    const {hero_section, blogs, bio_section} = data;
+    console.log(bio_section)
 
     return (
         <Main>
@@ -51,32 +52,12 @@ const Page = ({ data }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 md:p-[50px] md:gap-10">
                     <div>
                         <img
-                            src={about}
+                            src={`${fileBase}/${bio_section.image}`}
                             alt=""
                             className="max-h-[540px] m-auto"
                         />
                     </div>
-                    <div className={`text-[10px] md:text-[16px] mt-[20px]`}>
-                        <p>
-                            I have a proven track record of successful
-                            collaborations and an unwavering commitment to
-                            delivering compelling content, whether through
-                            producing, script development, or acting. I aim to
-                            inspire and captivate audiences with narratives that
-                            push boundaries and evoke powerful emotions. My
-                            vision is to create engaging and meaningful content
-                            that resonates with viewers while continuously
-                            expanding my horizons and exploring new avenues of
-                            creative expression. By infusing my scripts with the
-                            global insights gained from my travels, linguistic
-                            versatility, and a diverse range of personal
-                            interests, I aim to deliver stories that are not
-                            only thought-provoking but entertaining.
-                        </p>
-                        <p className="font-[700] mt-[30px]">
-                            IMDB link is: <a className={`text-[#CC3366]`} target="_blank" href="http://www.imdb.com/name/nm5397763">http://www.imdb.com/name/nm5397763</a>
-                        </p>
-                    </div>
+                    <div className={`text-[10px] md:text-[16px] mt-[20px]`} dangerouslySetInnerHTML={{__html: bio_section.description}}></div>
                 </div>
             </div>
             <div className="">
