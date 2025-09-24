@@ -25,35 +25,37 @@ const Page = ({ data }) => {
                 </div>
             </div>
             <div className="bg-[#ECECEC]">
-                <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px] space-y-[70px]">
-                    {
-                        blogs.map((blog, i) => (
-                            <div
-                                key={i}
-                                className={`flex flex-col md:flex-row ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-                            >
-                                <div className="p-5 md:w-1/2 max-h-[400px] overflow-hidden">
-                                    <img
-                                        src={`${fileBase}/${blog.image}`}
-                                        alt="section-image"
-                                        className={`w-full h-full rounded-lg object-cover ${i % 2 !== 0 ? "border-l-[6px]" : "border-r-[6px]"} border-[#E60000]`}
-                                    />
-                                </div>
-                                <div className="p-[20px] md:px-[50px] md:py-[40px] md:w-1/2">
-                                    <div className="uppercase text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
-                                        <h2
-                                            className="text-[#111111]"
-                                            dangerouslySetInnerHTML={{ __html: blog.title }}
-                                        ></h2>
+                <div className="md:container mx-auto">
+                    <div className="container m-auto py-[50px] text-[#7A7A7A] text-[16px] space-y-[70px]">
+                        {
+                            blogs.map((blog, i) => (
+                                <div
+                                    key={i}
+                                    className={`flex flex-col md:flex-row ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+                                >
+                                    <div className="p-5 md:h-[400px] md:w-[520px] overflow-hidden">
+                                        <img
+                                            src={`${fileBase}/${blog.image}`}
+                                            alt="section-image"
+                                            className={`w-full h-full rounded-lg object-cover ${i % 2 !== 0 ? "border-l-[6px]" : "border-r-[6px]"} border-[#E60000]`}
+                                        />
                                     </div>
-                                    <p
-                                        className="text-[10px] md:text-[16px] mt-[20px]"
-                                        dangerouslySetInnerHTML={{ __html: blog.description }}
-                                    ></p>
+                                    <div className="p-[20px] md:px-[50px] md:py-[40px] md:w-1/2">
+                                        <div className="uppercase text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
+                                            <h2
+                                                className="text-[#111111]"
+                                                dangerouslySetInnerHTML={{ __html: blog.title }}
+                                            ></h2>
+                                        </div>
+                                        <p
+                                            className="text-[10px] md:text-[16px] mt-[20px]"
+                                            dangerouslySetInnerHTML={{ __html: blog.description }}
+                                        ></p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
             <div>
