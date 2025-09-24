@@ -18,7 +18,7 @@ const Page = ({ data }) => {
                 <div className="container mx-auto">
                     <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-5 md:space-y-8">
                         <div className="text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
-                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title.replace(/^(\S+)\s/, "$1<br />") }}></h3>
+                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title}}></h3>
                         </div>
                         <div className="text-[10px] md:text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
                     </div>
@@ -28,16 +28,28 @@ const Page = ({ data }) => {
                 <div className="max-w-[1250px] m-auto py-[50px] text-[#7A7A7A] text-[16px] space-y-[70px]">
                     {
                         blogs.map((blog, i) => (
-                            <div className="grid grid-cols-1 md:grid-cols-2">
-                                <div className="p-5">
-                                    <img src={`${fileBase}/${blog.image}`} alt="section-image" className={`w-full h-full object-cover`} />
+                            <div
+                                key={i}
+                                className={`flex flex-col md:flex-row ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+                            >
+                                <div className="p-5 md:w-1/2 max-h-[400px] overflow-hidden">
+                                    <img
+                                        src={`${fileBase}/${blog.image}`}
+                                        alt="section-image"
+                                        className={`w-full h-full rounded-lg object-cover ${i % 2 !== 0 ? "border-l-[6px]" : "border-r-[6px]"} border-[#E60000]`}
+                                    />
                                 </div>
-                                <div className="p-[20px] md:p-[50px]">
+                                <div className="p-[20px] md:px-[50px] md:py-[40px] md:w-1/2">
                                     <div className="uppercase text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
-                                        <h2 className="text-[#111111]" dangerouslySetInnerHTML={{__html: blog.title}}>
-                                        </h2>
+                                        <h2
+                                            className="text-[#111111]"
+                                            dangerouslySetInnerHTML={{ __html: blog.title }}
+                                        ></h2>
                                     </div>
-                                    <p className="text-[10px] md:text-[16px] mt-[20px]" dangerouslySetInnerHTML={{__html: blog.description}}></p>
+                                    <p
+                                        className="text-[10px] md:text-[16px] mt-[20px]"
+                                        dangerouslySetInnerHTML={{ __html: blog.description }}
+                                    ></p>
                                 </div>
                             </div>
                         ))

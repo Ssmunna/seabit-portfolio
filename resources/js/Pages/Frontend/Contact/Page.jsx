@@ -49,7 +49,7 @@ const Page = ({ data:contactData }) => {
                     <div className="container mx-auto">
                         <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-8">
                             <div className="text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
-                                <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title.replace(/^(\S+)\s/, "$1<br />") }}></h3>
+                                <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
                             </div>
                         </div>
                     </div>
