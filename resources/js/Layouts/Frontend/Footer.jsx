@@ -14,16 +14,16 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
     return (
         <footer className="bg-[#111111] text-gray-300 py-8">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:text-center md:text-left">
 
                     {/* Quick Links */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex md:justify-center">
                         <div>
                             <h3 className="font-semibold mb-4 text-white">Quick Links</h3>
                             <ul className="space-y-2">
                                 <li>
                                     <Link href={route('about_company')}
-                                        className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                        className="flex items-center md:justify-start gap-2 hover:text-red-500 transition"
                                     >
                                         <span className="w-2 h-2 bg-red-600 rounded-full"></span>
                                         About My Company
@@ -31,7 +31,7 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
                                 </li>
                                 <li>
                                     <Link href={route('about_me')}
-                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                          className="flex items-center md:justify-start gap-2 hover:text-red-500 transition"
                                     >
                                         <span className="w-2 h-2 bg-red-600 rounded-full"></span>
                                         About Me
@@ -39,7 +39,7 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
                                 </li>
                                 <li>
                                     <Link href={route('sample-script')}
-                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                          className="flex items-center md:justify-start gap-2 hover:text-red-500 transition"
                                     >
                                         <span className="w-2 h-2 bg-red-600 rounded-full"></span>
                                         Sample Scripts
@@ -47,7 +47,7 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
                                 </li>
                                 <li>
                                     <Link href={route('contact_details')}
-                                          className="flex items-center justify-center md:justify-start gap-2 hover:text-red-500 transition"
+                                          className="flex items-center md:justify-start gap-2 hover:text-red-500 transition"
                                     >
                                         <span className="w-2 h-2 bg-red-600 rounded-full"></span>
                                         Contact Details
@@ -58,23 +58,23 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
                     </div>
 
                     {/* Connects */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex md:justify-center">
                         <div>
                             <h3 className="font-semibold mb-4 text-white">Connects</h3>
                             <ul className="space-y-3">
-                                <li className="flex items-center justify-center md:justify-start gap-2">
+                                <li className="flex items-center md:justify-center md:justify-start gap-2">
                                     <FiMail className="w-5 h-5 text-red-600" />
                                     <a href={`mailto:${contact_info?.email}`} className="hover:text-red-500 transition">
                                         {contact_info?.email}
                                     </a>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start gap-2">
+                                <li className="flex items-center md:justify-center md:justify-start gap-2">
                                     <FiPhone className="w-5 h-5 text-red-600" />
                                     <a href={`tel:${contact_info?.phone}`} className="hover:text-red-500 transition">
                                         {contact_info?.phone}
                                     </a>
                                 </li>
-                                <li className="flex items-center justify-center md:justify-start gap-2">
+                                <li className="flex items-center md:justify-center md:justify-start gap-2">
                                     <FaSkype className="w-5 h-5 text-red-600" />
                                     <span>{contact_info?.skype}</span>
                                 </li>
@@ -83,7 +83,7 @@ const Footer = ({contact_info = null, social_links = null, copyright = null}) =>
                     </div>
 
                     {/* Social Media */}
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex md:justify-center">
                         <div>
                             <h3 className="font-semibold mb-4 text-white">Follow Us On</h3>
                             <div className="flex justify-center md:justify-start gap-4">

@@ -1,10 +1,5 @@
 import React from "react";
 import Main from "@/Layouts/Frontend/Main.jsx";
-import sectionShape from "../../../../../public/assets/images/section/sectionShape.png";
-import section1 from "../../../../../public/assets/images/aboutMyCompany/section-1.png";
-import section2 from "../../../../../public/assets/images/aboutMyCompany/section-2.png";
-import section3 from "../../../../../public/assets/images/aboutMyCompany/section-3.png";
-import section4 from "../../../../../public/assets/images/aboutMyCompany/section-4.png";
 import sectionShape3 from "../../../../../public/assets/images/section/sectionShape3.png";
 import sectionShape4 from "../../../../../public/assets/images/section/sectionShape4.png";
 import about from "../../../../../public/assets/images/aboutMe/about.png";
@@ -17,15 +12,15 @@ const Page = ({ data }) => {
     return (
         <Main>
             <div
-                className={`flex items-center text-white h-[300px] md:h-[667px] w-full bg-cover bg-[#ECECEC] bg-[position:70%_center]`}
+                className={`flex items-center text-white h-[450px] md:h-[667px] w-full bg-cover bg-[#ECECEC] bg-[position:70%_center]`}
                 style={{ backgroundImage: `url(${fileBase}/${hero_section.image})` }}
             >
                 <div className="container mx-auto">
-                    <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-8">
-                        <div className="text-[45px]">
-                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title }}></h3>
+                    <div className="container mx-auto bg-[#ECECEC]/10 rounded-lg py-[43px] px-[30px] space-y-5 md:space-y-8">
+                        <div className="text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
+                            <h3 className="font-[700]" dangerouslySetInnerHTML={{ __html: hero_section.title.replace(/^(\S+)\s/, "$1<br />") }}></h3>
                         </div>
-                        <div className="text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
+                        <div className="text-[10px] md:text-[16px]" dangerouslySetInnerHTML={{ __html: hero_section.description }}></div>
                     </div>
                 </div>
             </div>
@@ -37,12 +32,12 @@ const Page = ({ data }) => {
                                 <div className="p-5">
                                     <img src={`${fileBase}/${blog.image}`} alt="section-image" className={`w-full h-full object-cover`} />
                                 </div>
-                                <div className="p-[50px]">
-                                    <div className="uppercase text-[32px] font-[700] leading-[30px]">
+                                <div className="p-[20px] md:p-[50px]">
+                                    <div className="uppercase text-[20px] md:text-[45px] leading-[30px] md:leading-[60px]">
                                         <h2 className="text-[#111111]" dangerouslySetInnerHTML={{__html: blog.title}}>
                                         </h2>
                                     </div>
-                                    <p className="leading-[26px] mt-[20px]" dangerouslySetInnerHTML={{__html: blog.description}}></p>
+                                    <p className="text-[10px] md:text-[16px] mt-[20px]" dangerouslySetInnerHTML={{__html: blog.description}}></p>
                                 </div>
                             </div>
                         ))
@@ -61,7 +56,7 @@ const Page = ({ data }) => {
                             className="max-h-[540px] m-auto"
                         />
                     </div>
-                    <div>
+                    <div className={`text-[10px] md:text-[16px] mt-[20px]`}>
                         <p>
                             I have a proven track record of successful
                             collaborations and an unwavering commitment to

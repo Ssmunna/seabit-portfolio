@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @import 'tailwindcss';
+
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+
 
 .container {
     width: 90%;
@@ -72,6 +80,9 @@
     }
 }
 
+.ql-editor {
+    font-family: "Poppins", sans-serif;
+}
 
 .ql-align-center {
     text-align: center;
