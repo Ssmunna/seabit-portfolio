@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*fonts*/
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+
+    --container-sm: 24px;
+    --container-md: 32px;
+    --container-lg: 48px;
+    --container-xl: 65px;
+    --container: 65px;
+    --container-2xl: 1320px;
+}
+
+.dark-bg{
+    @apply dark:bg-[#FAFAFA1A]
+}
+
+.dark-text{
+    @apply dark:text-[#ffffff]
+}
+
+.dark-border{
+    @apply dark:border-[#ffffff] dark:hover:border-[#F25C30]
+}
+
+.nav_link{
+    @apply relative flex justify-center items-center text-[#2A2A2A] font-[400] font-roboto
+    after:content-[''] after:absolute after:bottom-[-2px] after:left-0
+    after:h-[1px] after:bg-[#F25C30] after:w-0
+    after:transition-all after:duration-300
+    hover:after:w-full dark:text-[#ffffff]
+}
+
+.nav_link.active {
+    @apply after:w-full;
+}
+
+.nav-items{
+    @apply w-full h-[47px] flex justify-center items-center text-[#2B3C50] hover:bg-[#F25C30] hover:text-[#FFFFFF] duration-150 cursor-pointer rounded-[20px]
+}
+
+
+/*Career Page design*/
+.bubble {
+    @apply px-6 py-2 border border-gray-400 rounded-full text-gray-600 text-sm whitespace-nowrap bg-white dark:bg-[#bdbebe] shadow-sm;
+}
+
+
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.6;
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background: #F25C30 !important;
+    opacity: 1;
+}
+
+.swiper-pagination {
+    bottom: 16px !important;
+    text-align: center;
+}
+
+
+.striped-bg {
+    background-image: repeating-linear-gradient(
+        45deg,
+        #f3f4f6 0,
+        #f3f4f6 10px,
+        #ffffff 10px,
+        #ffffff 20px
+    );
+    background-size: 40px 40px;
+    animation: stripesMove 1s linear infinite;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes stripesMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 40px 40px;
+    }
+}
